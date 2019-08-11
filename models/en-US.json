@@ -1,0 +1,225 @@
+{
+	"invocation": "rora",
+	"intents": [
+		{
+			"name": "homeStatusIntent",
+			"phrases": [
+				"{homeStatus}",
+				"set my home status to {homeStatus}",
+				"report my Home status to {homeStatus}",
+				"make my home status  {homeStatus}",
+				"my home status is {homeStatus}",
+				"make me {homeStatus}",
+				"I'm {homeStatus}",
+				"Welcome me {homeStatus}",
+				"reporting my home status as {homeStatus}"
+			],
+			"inputs": [
+				{
+					"name": "homeStatus",
+					"type": "homeStatusType"
+				}
+			]
+		},
+		{
+			"name": "sceneLibraryStatusIntent",
+			"phrases": [
+				"{sceneLibraryStatus}",
+				"set my Scenes Library status to {sceneLibraryStatus}",
+				"my scenes library is {sceneLibraryStatus}",
+				"report my scenes library to {sceneLibraryStatus}",
+				"the scenes library is {sceneLibraryStatus}",
+				"we are {sceneLibraryStatus} with the Scenes Library",
+				"my library is {sceneLibraryStatus}",
+				"my scenes are {sceneLibraryStatus}",
+				"set the scenes library to {sceneLibraryStatus}",
+				"report the scenes library as {sceneLibraryStatus}",
+				"report my scenes library as {sceneLibraryStatus}",
+				"report scenes library as {sceneLibraryStatus}"
+			],
+			"inputs": [
+				{
+					"name": "sceneLibraryStatus",
+					"type": "sceneLibraryStatusType"
+				}
+			]
+		},
+		{
+			"name": "deviceStatusIntent",
+			"phrases": [
+				"{deviceStatus}",
+				"set my device status to {deviceStatus}",
+				"my device status is {deviceStatus}",
+				"the devices are {deviceStatus}",
+				"my devices are {deviceStatus}",
+				"the device status is {deviceStatus}",
+				"all devices are {deviceStatus}",
+				"make the device status {deviceStatus}",
+				"the new device status is {deviceStatus}",
+				"update the device status to {deviceStatus}",
+				"report my device status as {deviceStatus}",
+				"report the devices as {deviceStatus}"
+			],
+			"inputs": [
+				{
+					"name": "deviceStatus",
+					"type": "deviceStatusType"
+				}
+			]
+		}
+	],
+	"inputTypes": [
+		{
+			"name": "sceneLibraryStatusType",
+			"values": [
+				{
+					"value": "Current",
+					"synonyms": [
+						"updated",
+						"good",
+						"correct",
+						"all set",
+						"up to date",
+						"ready to rock n roll",
+						"correct",
+						"thumbs up",
+						"addressed",
+						"got some love",
+						"had some attention"
+					]
+				},
+				{
+					"value": "Expired",
+					"synonyms": [
+						"needs update",
+						"bad",
+						"wrong",
+						"missing",
+						"out of date",
+						"dead",
+						"not good",
+						"incorrect",
+						"goofed up",
+						"i dont think this is right",
+						"I dont think it's right",
+						"please address",
+						"needs attention",
+						"needs some love"
+					]
+				}
+			]
+		},
+		{
+			"name": "deviceStatusType",
+			"values": [
+				{
+					"value": "Online",
+					"synonyms": [
+						"on",
+						"up",
+						"power on",
+						"power up",
+						"bring on",
+						"bring up",
+						"running",
+						"warming up",
+						"engaged",
+						"good",
+						"ready"
+					]
+				},
+				{
+					"value": "OffLine",
+					"synonyms": [
+						"off",
+						"toast",
+						"burnt up",
+						"dont ask",
+						"down",
+						"powered down",
+						"not running",
+						"dead",
+						"down hard",
+						"we have an I D 10 T error",
+						"next",
+						"bad"
+					]
+				}
+			]
+		},
+		{
+			"name": "homeStatusType",
+			"values": [
+				{
+					"value": "Home",
+					"synonyms": [
+						"here",
+						"home",
+						"back",
+						"returned",
+						"beamed up",
+						"in the flesh",
+						"present",
+						"arrived",
+						"around",
+						"ready"
+					]
+				},
+				{
+					"value": "Away",
+					"synonyms": [
+						"gone",
+						"toast",
+						"leaving",
+						"out of here",
+						"not present",
+						"beamed down",
+						"not around",
+						"ghost",
+						"departed"
+					]
+				}
+			]
+		}
+	],
+	"alexa": {
+		"interactionModel": {
+			"languageModel": {
+				"intents": [
+					{
+						"name": "AMAZON.CancelIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.HelpIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.StopIntent",
+						"samples": []
+					}
+				]
+			}
+		}
+	},
+	"dialogflow": {
+		"intents": [
+			{
+				"name": "Default Fallback Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"fallbackIntent": true
+			},
+			{
+				"name": "Default Welcome Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"events": [
+					{
+						"name": "WELCOME"
+					}
+				]
+			}
+		]
+	}
+}
